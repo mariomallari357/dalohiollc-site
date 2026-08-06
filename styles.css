@@ -1,0 +1,204 @@
+/* DAL Ohio LLC — Swiss/International direction. Deliberately plain: this site exists
+   to be read by a carrier reviewer during A2P 10DLC brand vetting, not to sell.
+   No JS, no images, no third-party anything except the two webfonts. */
+
+:root {
+  --ink: #1c1f24;
+  --paper: #fbfaf8;
+  --muted: #5a6069;
+  --rule: #e2ded8;
+  --accent: #1f4d3d;
+
+  --sans: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Source Serif 4", Georgia, serif;
+
+  --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-h1: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
+  --text-h2: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+  --text-eyebrow: 0.75rem;
+
+  --measure: 34rem;
+  --gap: clamp(2.5rem, 2rem + 2vw, 4.5rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--text-body);
+  line-height: 1.65;
+  text-underline-offset: 0.15em;
+}
+
+.wrap {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  padding: 2rem 0 1.25rem;
+}
+
+.wordmark {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.wordmark:hover,
+.wordmark:focus-visible {
+  color: var(--accent);
+}
+
+.masthead p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* ---------- type ---------- */
+
+main {
+  padding: var(--gap) 0;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: var(--text-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0 0 1.25rem;
+  font-size: var(--text-h1);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  max-width: 28ch;
+}
+
+h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: var(--text-h2);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+
+.lede {
+  font-family: var(--serif);
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  max-width: var(--measure);
+  margin: 0 0 2rem;
+}
+
+.prose {
+  font-family: var(--serif);
+  max-width: var(--measure);
+}
+
+.prose p,
+.prose li {
+  margin: 0 0 1rem;
+}
+
+.prose ul {
+  padding-left: 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- details block: address / contact ---------- */
+
+.facts {
+  margin: 0;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  gap: 1.5rem;
+  /* 11rem, not 13 — at the 44rem measure, 13rem orphans Email onto its own row. */
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+}
+
+.facts dt {
+  font-size: var(--text-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.facts dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+/* ---------- footer ---------- */
+
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.5rem 0 3rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+footer nav {
+  margin-bottom: 0.75rem;
+}
+
+footer nav a {
+  margin-right: 1.25rem;
+}
+
+footer p {
+  margin: 0;
+  max-width: var(--measure);
+}
+
+.updated {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}

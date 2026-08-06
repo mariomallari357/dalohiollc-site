@@ -1,0 +1,15 @@
+# This repo is PUBLIC - GitHub Pages needs a public repo on a free account.
+# Only the four site files may ever be committed. Everything below is either
+# internal reasoning or working output and must not be published.
+
+# Contains client instructions verbatim ("Seth, 2026-08-06: nothing about Blue
+# Moon in any way shape or form") - confidential, never publish.
+check_site.py
+
+# Screenshots taken during review.
+_shots/
+
+# Local noise.
+.DS_Store
+Thumbs.db
+*.log
