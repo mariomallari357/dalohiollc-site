@@ -1,0 +1,21 @@
+# Netlify configuration for dalohiollc.com
+#
+# HISTORY, because this file's arrival looks odd in the log: a netlify.toml (261 bytes)
+# existed in the LIVE deploy of 2026-08-06 but was never committed here, so the repo and
+# production had drifted. Its content could not be recovered - Netlify's API returns file
+# metadata only and does not serve netlify.toml over HTTP - so this is a deliberate
+# minimal reconstruction rather than the original bytes.
+#
+# The original's observable behaviour was nil, which is why replacing it is safe:
+#   - the 2026-08-06 deploy summary reports "No redirect rules processed"
+#   - the site's build_settings are empty (no repo linked, no build command)
+#   - the only security header on a live response is Netlify's automatic HSTS
+#
+# Site-level settings live in the Netlify UI, NOT here, and are left alone:
+# pretty_urls = true and ignore_html_forms = true. Do not move them into this file
+# without checking the dashboard first - duplicating them is how they drift.
+
+[build]
+  # A hand-built static site: nothing to compile, publish the repo root as-is.
+  publish = "."
+  command = ""
