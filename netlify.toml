@@ -11,9 +11,16 @@
 #   - the site's build_settings are empty (no repo linked, no build command)
 #   - the only security header on a live response is Netlify's automatic HSTS
 #
-# Site-level settings live in the Netlify UI, NOT here, and are left alone:
-# pretty_urls = true and ignore_html_forms = true. Do not move them into this file
+# Site-level settings live in the Netlify UI/API, NOT here. Do not move them into this file
 # without checking the dashboard first - duplicating them is how they drift.
+#   pretty_urls        = true
+#   ignore_html_forms  = false   <- CHANGED 2026-08-18. It was true, which is Netlify's
+#     default for a site that has never had a form, and it is what made the contact form
+#     answer "404 Page not found" on submit: form detection runs while a deploy is being
+#     processed, so with it on the form was never registered and the POST had no handler
+#     to reach. The markup was never at fault. An earlier version of this comment recorded
+#     the setting as "left alone" - do not put it back, and note that flipping it only
+#     takes effect on the NEXT deploy.
 
 [build]
   # A hand-built static site: nothing to compile, publish the repo root as-is.
