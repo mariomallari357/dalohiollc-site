@@ -8,7 +8,10 @@
 #
 # The original's observable behaviour was nil, which is why replacing it is safe:
 #   - the 2026-08-06 deploy summary reports "No redirect rules processed"
-#   - the site's build_settings are empty (no repo linked, no build command)
+#   - the site's build_settings were empty when this was written. The repo was linked on
+#     2026-09-18: build_settings had carried repo_url since 2026-09-01 but no deploy_key_id,
+#     so every build died at 'preparing repo'. A Netlify deploy key was created and added to
+#     the GitHub repo read-only, and the first successful auto-deploy ran the same day.
 #   - the only security header on a live response is Netlify's automatic HSTS
 #
 # Site-level settings live in the Netlify UI/API, NOT here. Do not move them into this file
